@@ -19,7 +19,7 @@
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="crosswalkdatamigration">
-        <param name="android-package" value="com.unit11apps.crosswalkdatamigration"/>
+        <param name="android-package" value="com.unit11apps.CrosswalkDataMigration"/>
       </feature>
     </config-file>
 
