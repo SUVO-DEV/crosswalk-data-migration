@@ -9,10 +9,10 @@
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
 
-  <asset src="www/crosswalkdatamigration.js" target="js/crosswalkdatamigration.js"/>
+  <asset src="www/CrosswalkDataMigration.js" target="js/CrosswalkDataMigration.js"/>
 
-  <js-module src="www/crosswalkdatamigration.js" name="crosswalkdatamigration">
-    <clobbers target="crosswalkdatamigration" />
+  <js-module src="www/CrosswalkDataMigration.js" name="CrosswalkDataMigration">
+    <clobbers target="CrosswalkDataMigration" />
   </js-module>
 
   <platform name="android">
