@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://github.com/robbresearch/crosswalk_data_migration"
+        id="com.unit11apps.crosswalkdatamigration"
+        version="1.0.0">
+
+  <name>Crosswalk data migration</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/crosswalkdatamigration.js" target="js/crosswalkdatamigration.js"/>
+
+  <js-module src="www/crosswalkdatamigration.js" name="crosswalkdatamigration">
+    <clobbers target="crosswalkdatamigration" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="crosswalkdatamigration">
+        <param name="android-package" value="com.unit11apps.crosswalkdatamigration"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Crosswalkdatamigration.java" target-dir="src/com/example/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform>
+
+</plugin>
