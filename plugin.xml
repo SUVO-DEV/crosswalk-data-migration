@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://github.com/robbresearch/crosswalk_data_migration"
-        id="com.unit11apps.crosswalkdatamigration"
+        id="com.unit11apps.CrosswalkDataMigration"
         version="1.0.0">
 
   <name>Crosswalk data migration</name>
