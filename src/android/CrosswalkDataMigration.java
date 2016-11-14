@@ -1,4 +1,4 @@
-package com.unit11apps.crosswalkdatamigration;
+package com.unit11apps.CrosswalkDataMigration;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
