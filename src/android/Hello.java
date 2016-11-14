@@ -1,15 +1,15 @@
-package com.unit11apps.CrosswalkDataMigration;
+package com.example.plugin;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-public class CrosswalkDataMigration extends CordovaPlugin {
+public class Hello extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("migratedata")) {
+        if (action.equals("greet")) {
 
             String name = data.getString(0);
             String message = "Hello, " + name;
