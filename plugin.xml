@@ -23,7 +23,7 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/Crosswalkdatamigration.java" target-dir="src/com/example/plugin/"/>
+    <source-file src="src/android/Crosswalkdatamigration.java" target-dir="src/com/Crosswalkdatamigration/plugin/"/>
   </platform>
 
   <platform name="ios">
