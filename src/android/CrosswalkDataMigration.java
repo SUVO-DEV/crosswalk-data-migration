@@ -1,4 +1,4 @@
-package com.example.plugin;
+package com.unit11apps.crosswalkdatamigration;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
@@ -10,15 +10,17 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import android.os.Environment;
 
-public class Hello extends CordovaPlugin {
+public class CrosswalkDataMigration extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("greet")) {
+        if (action.equals("migratedata")) {
+
+            android.content.Context context = this.cordova.getActivity().getApplicationContext();
 
             //get the package name
-            String packageName = data.getString(0);
+            String packageName = context.getPackageName();//data.getString(0);
 
             File crosswalkDB = new File("/data/data/" + packageName + "/app_xwalkcore/Default/databases/file__0/1/");
             File crosswalkDataMigrated = new File("/data/data/" + packageName + "/app_webview/databases/crosswalkDataMigrated.txt/");
@@ -49,57 +51,6 @@ public class Hello extends CordovaPlugin {
                     System.err.println("Caught IOException: " + e.getMessage());
                 }
             }
-
-
-            /*
-            File directory = new File("/data/data/com.unit11apps.crosswalkMigration/app_xwalkcore");
-            if (! directory.exists()){
-                directory.mkdir();
-            }
-
-            File directory1 = new File("/data/data/com.unit11apps.crosswalkMigration/app_xwalkcore/Default");
-            if (! directory1.exists()){
-                directory1.mkdir();
-            }
-
-            File directory2 = new File("/data/data/com.unit11apps.crosswalkMigration/app_xwalkcore/Default/databases");
-            if (! directory2.exists()){
-                directory2.mkdir();
-            }
-
-            File directory3 = new File("/data/data/com.unit11apps.crosswalkMigration/app_xwalkcore/Default/databases/file__0");
-            if (! directory3.exists()){
-                directory3.mkdir();
-            }
-
-
-            File from = new File("/data/data/" + packageName + "/app_webview/databases/file__0/1");
-            File to = new File("/data/data/" + packageName + "/app_xwalkcore/Default/databases/file__0/", "1");
-
-            try {
-                this.copyFile(from, to);
-            }catch(IOException e)
-            {
-                System.err.println("Caught IOException: " + e.getMessage());
-            }
-
-
-
-            /////////////////
-
-            String path = "/data/data/" + packageName + "/app_xwalkcore/Default/databases/file__0";
-            android.util.Log.d("Files in ------- ", "Path: " + path);
-            File directory4 = new File(path);
-            File[] files = directory4.listFiles();
-            android.util.Log.d("Files", "Size: "+ files.length);
-            for (int i = 0; i < files.length; i++)
-            {
-                android.util.Log.d("Files", "FileName:" + files[i].getName());
-            }
-
-
-            /////////////////
-    */
 
             String message = "SUCCESSFULLY MIGRATED DATABASE TO CROSSWALK";
             callbackContext.success(message);
